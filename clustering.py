@@ -17,7 +17,7 @@ from Bio import SeqIO, Entrez
 from matplotlib import cm
 from matplotlib.lines import Line2D
 from scipy.cluster import hierarchy
-from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
+from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, to_tree
 from scipy.spatial.distance import pdist
 from skbio.diversity import beta_diversity
 from skbio.stats.ordination import pcoa
@@ -53,6 +53,19 @@ def var_call(L, ref):
         ctrl = mut[1]
     new_str += ref_str[ctrl:]
     return new_str
+
+def getNewick(node, newick, parentdist, leaf_names):
+    if node.is_leaf():
+        return "%s:%.2f%s" % (leaf_names[node.id], parentdist - node.dist, newick)
+    else:
+        if len(newick) > 0:
+            newick = "):%.2f%s" % (parentdist - node.dist, newick)
+        else:
+            newick = ");"
+        newick = getNewick(node.get_left(), newick, node.dist, leaf_names)
+        newick = getNewick(node.get_right(), ",%s" % (newick), node.dist, leaf_names)
+        newick = "(%s" % (newick)
+        return newick
 
 ##Data import
 
@@ -315,6 +328,16 @@ for ff in args.format.split(","):
     plt.savefig("hca2_" + args.c2method + "_" + args.c2metric + "." + ff, dpi=args.dpi, bbox_inches='tight')
     print("\nGraphic created: hca2_" + args.c2method + "_" + args.c2metric + "." + ff)
 plt.clf()
+#Export dendrogram as NEWICK tree
+tr = to_tree(lmatrix2, False)
+if args.label == "aa":
+    n_tr = getNewick(tr, "", tr.dist, [x.replace(" (", "_").replace(")", "").replace(":", "/") for x in list(lab.loc[d.index]["label"])])
+#print([x.replace(" (", "_").replace(")", "") for x in list(lab.loc[d.index]["label"])])
+if args.label == "nucleotide":
+    n_tr = getNewick(tr, "", tr.dist, d.index)
+with open("tree.tr", "w") as tf:
+    tf.write(n_tr)
+print("\nFile created: tree.tre")
 
 ###Calculate ordination analysis
 
