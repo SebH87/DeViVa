@@ -20,6 +20,7 @@ from scipy.cluster import hierarchy
 from scipy.cluster.hierarchy import dendrogram, linkage, fcluster, to_tree
 from scipy.spatial.distance import pdist
 from skbio.diversity import beta_diversity
+from skbio.stats.composition import clr, clr_inv, ilr, ilr_inv
 from skbio.stats.ordination import pcoa
 from skbio.stats.distance import anosim, permanova
 from sklearn.metrics import silhouette_score
@@ -100,6 +101,7 @@ optionalNamed.add_argument('-c', '--colors', action='store', default='standard',
 optionalNamed.add_argument('-f', '--format', action='store', default='jpeg', type=str, help="Fileformat for all output graphics. You can choose between: eps, jpeg, pdf, png, ps, raw, rgba, svg, svgz, and tiff. You can provide multiple file formats by separating them with a comma sign, e.g. 'jpeg,tiff'. [Default: jpeg]")
 optionalNamed.add_argument('-dpi', '--dpi', action='store', default=100, type=int, help="Pixel density, this is only used if a raster file format is selected at --format! [Default: 100]")
 optionalNamed.add_argument('-l', '--label', action='store', default='nucleotide', type=str, help="Label mutations in the second HCA either based on the nucleotide or amino acid level. ATTENTION: In case of amino acid based labels, a reference file ('aa_label.txt') must be provided! For creating the reference file, please use the 'proteinlabel.py' script. Available options: 'nucleotide', 'aa' [Default: nucleotide]")
+optionalNamed.add_argument('-t', '--transformation', action='store', default='original', type=str, help="Data transformation of relative mutation counts per sample between the first and the second HCA. You can choose between the following options: clr (centre log ration) and inv_clr (inverse centre log ration). Use 'original' if you do not want to apply any data transformation. [Default: original]") ###, ilr (isometric log ration), and ilr_inv (inverse isometric log ratio)
 args = parser.parse_args()
 data = args.data
 #Check of input
@@ -171,6 +173,24 @@ print("\nFile created: bias.txt")
 d = d.loc[mois]
 d.to_csv("mois.txt", sep=args.output_separator)
 print("\nFile created: mois.txt\n")
+
+###Data transformation
+if args.transformation != "original":
+    col_labels = d.columns
+    row_labels = d.index
+    d = d.replace(0, 0.0001)
+if args.transformation == "clr":
+    d = pd.DataFrame(clr(d), index=row_labels)
+    d.columns = col_labels
+if args.transformation == "clr_inv":
+    d = pd.DataFrame(clr_inv(d), index=row_labels)
+    d.columns = col_labels
+#if args.transformation == "ilr":
+#    d = pd.DataFrame(ilr(d), index=row_labels)
+#    d.columns = col_labels
+#if args.transformation == "ilr_inv":
+#    d = pd.DataFrame(ilr_inv(d), index=row_labels)
+#    d.columns = col_labels
 
 ###Second HCA
 
