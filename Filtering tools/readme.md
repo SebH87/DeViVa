@@ -2,18 +2,18 @@
 
 The DeViVa filtering tools can be used to filter input data based on various criteria for a DeViVa analysis. There are two versions available:
 
-* __filtering.py__ &emsp; a simplyfied version with GUI dialogs for entering the filtering parameters
-* __filtering_exp.py__ &emsp; an advanced version where all parameters are set initially
+* __DeViVa_Filter.py__ &emsp; a simplyfied version with GUI dialogs for entering the filtering parameters
+* __DeViVa_FilterPro.py__ &emsp; an advanced version where all parameters are set initially
 
 __USAGE:__
 
 The DeViVa filtering tools are Python scripts that can be run on any operating system. Please ensure that you are using Python 3.x! To start the filtering, go to a terminal and type in:
 
-_python filtering.py -d -m_
+_python DeViVa_Filter.py -d \<data file\> -m \<metadata file\>_
 
 or 
 
-_python filtering_exp.py -d -m_
+_python DeViVa_FilterPro.py -d \<data file\> -m \<metadata file\>_
 
 You can add additional arguments if needed, but -d is always needed!
 
