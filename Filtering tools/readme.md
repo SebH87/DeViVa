@@ -45,7 +45,7 @@ __ -d, --data__ &emsp; Name of the input data file.
 
 __ -m, --metadata__ &emsp; Name of the input metadata file.
 
-__Optional (only available for "filtering_exp.py"):__
+__Optional (only available for "DeViVa_FilterPro.py"):__
 
 __-af, --allele_frequency__ &emsp; Treshold for allele frequency, lower values are interpreted as 0. Use -1 if you do not want to apply a threshold for allele frequency. Input must be a number between 0 and 1, e.g. 0.05 or 0.01. [Default: -1]
 
