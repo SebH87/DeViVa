@@ -68,7 +68,7 @@ __-l, --label__ &emsp; Label mutations in the second HCA either based on the nuc
 
 __-m, --metadata__ &emsp; Name of the input metadata file. A metadata file is only needed when PCoA plots should be coloured based on metadata!
 
-__-mf, --mutation_file__ &emsp; Reference file for variant assignment when using the 'individual' mode from --assignment. [Default: mutations_list_20210519.csv]
+__-mf, --mutation_file__ &emsp; Reference file for variant assignment when using the 'individual' mode from --assignment. Keep in mind that the mutation file must be stored in the same directory as the DeViVa Python script! You can download the default file from the DeViVa GitHub repository. [Default: mutations_list_20210519.csv]
 
 __-mfs, --mutation_file_separator__ &emsp; Separator for the mutation file(s), e.g. ',' or ';'. ATTENTION: You need to use quotation marks here! For tabulator-separated data, use TAB. ATTENTION: This option is only needed when using the 'individual' mode from --assignment! [Default: ',']
 
