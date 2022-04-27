@@ -4,7 +4,11 @@ DeViVa is a tool designed for the _de-novo_ detection of novel emerging virus va
 
 DeViVa was originally designed for data from an amplicon-based sequencing approach relying on a modified version of the ARTIC primer set and amplicons of around 400 bases, but can easily be used also for other sequencing data. However, data need to be formatted in the right way (more information will follow soon)!
 
-__Following options are available:__
+__USAGE:__
+
+
+
+__OPTIONS:__
 
 __-a, --assignment__ &emsp; Strategy to assign mutations of a cluster to a SARS-CoV-2 variant. Available options: pangolin (Phylogenetic Assignment of Named Global Outbreak Lineages) or individual (each individual mutation is assigned to a SARS-CoV-2 variant and the most common hit is presented as most likely variant for the cluster). [Default: pangolin]
 
