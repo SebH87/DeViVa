@@ -1,12 +1,19 @@
 # DeViVa Filtering Tools
 
-The DeViVa filtering tools can be used to filter input data based on various criteria for a DeViVa analysis.
+The DeViVa filtering tools can be used to filter input data based on various criteria for a DeViVa analysis. There are two versions available:
+
+* __filtering.py__ &emsp; a simplyfied version with GUI dialogs for entering the filtering parameters
+* __filtering_exp.py__ &emsp; an advanced version where all parameters are set initially
 
 __USAGE:__
 
-DeViVa is a Python script that can be run on any operating system. Please ensure that you are using Python 3.x! To start a DeViVa analysis, go to a terminal and type in:
+The DeViVa filtering tools are Python scripts that can be run on any operating system. Please ensure that you are using Python 3.x! To start the filtering, go to a terminal and type in:
 
-_python DeViVa.py -d_
+_python filtering.py -d -m_
+
+or 
+
+_python filtering_exp.py -d -m_
 
 You can add additional arguments if needed, but -d is always needed!
 
@@ -38,7 +45,7 @@ __ -d, --data__ &emsp; Name of the input data file.
 
 __ -m, --metadata__ &emsp; Name of the input metadata file.
 
-__Optional:__
+__Optional (only available for "filtering_exp.py"):__
 
 __-af, --allele_frequency__ &emsp; Treshold for allele frequency, lower values are interpreted as 0. Use -1 if you do not want to apply a threshold for allele frequency. Input must be a number between 0 and 1, e.g. 0.05 or 0.01. [Default: -1]
 
