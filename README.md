@@ -64,7 +64,7 @@ __-ft, --frequency_threshold__ &emsp; Minimum mean frequency (= relative abundan
 
 __-h, --help__ &emsp; Show help message and exit.
 
-__-l, --label__ &emsp; Label mutations in the second HCA either based on the nucleotide or amino acid level. ATTENTION: In case of amino acid based labels, a reference file ('aa_label.txt') must be provided! For creating the reference file, please use the 'proteinlabel.py' script from the DeViVa GitHub page. Available options: 'nucleotide', 'aa' [Default: nucleotide]
+__-l, --label__ &emsp; Label mutations in the second HCA either based on the nucleotide or amino acid level. ATTENTION: In case of amino acid based labels, a reference file ('aa_label.txt') must be provided! For creating the reference file, please use the 'ProLab.py' script from the DeViVa GitHub page. Available options: 'nucleotide', 'aa' [Default: nucleotide]
 
 __-m, --metadata__ &emsp; Name of the input metadata file. A metadata file is only needed when PCoA plots should be coloured based on metadata!
 
