@@ -19,7 +19,7 @@ When using the advanced version (DeViVa_FilterPro.py), you can add additional ar
 
 __DEPENDENCIES:__
 
-The DeViVa filtering tools need some additional Python packages to be installed by the user. Here is a full list of all required Python packages:
+The DeViVa filtering tools need two (one in case of DeViVa_FilterPro.py) additional Python packages to be installed by the user. Here is a full list of all required Python packages:
 
 * Bio
 
