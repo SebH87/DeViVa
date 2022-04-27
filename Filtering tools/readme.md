@@ -21,21 +21,11 @@ __DEPENDENCIES:__
 
 The DeViVa filtering tools need two (one in case of DeViVa_FilterPro.py) additional Python packages to be installed by the user. Here is a full list of all required Python packages:
 
-* Bio
-
-* matplotlib
-
-* numpy
-
 * pandas
 
-* scikit-bio
+* zenipy (not required for DeViVa_FilterPro.py)
 
-* scikit-learn
-
-* scipy
-
-* seaborn
+If you have already installed all dependencies for DeViVa, only "zenipy" needs to be installed here!
 
 __OPTIONS:__
 
