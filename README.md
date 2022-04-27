@@ -1,11 +1,16 @@
-# DeViVa
-Scripts for analyzing SARS-CoV-2 variants
+# DeViVa (Deconvolution of Virus Variants)
+
+DeViVa is a tool designed for the _de-novo_ detection of novel emerging virus variants (e.g., SARS-CoV-2). Associated mutations are conflated by their corresponding frequency pattern. With DeViVa, it is possible to designate different mutation constellations based on their observed frequencies across different samples in time and space by a hierarchical, unsupervised two-step clustering approach. The produced constellations of correlated mutations can then be characterised by either incorporating them into the SARS-CoV-2 reference genome with subsequent variant typing using the pangolin software (https://cov-lineages.org/resources/pangolin.html), or by assigning them to a specific reference database for virus variants.
+
+DeViVa was originally designed for data from an amplicon-based sequencing approach relying on a modified version of the ARTIC primer set and amplicons of around 400 bases, but can easily be used also for other sequencing data. However, data need to be formatted in the right way (more information will follow soon)!
+
+__Following options are available:__
 
 __-a, --assignment__ &emsp; Strategy to assign mutations of a cluster to a SARS-CoV-2 variant. Available options: pangolin (Phylogenetic Assignment of Named Global Outbreak Lineages) or individual (each individual mutation is assigned to a SARS-CoV-2 variant and the most common hit is presented as most likely variant for the cluster). [Default: pangolin]
 
 __-c, --colors__ &emsp; Define colours for all plots (dendrogram, bar charts). You can choose between all common Python colormaps (https://matplotlib.org/stable/tutorials/colors/colormaps.html), e.g., 'viridis'. Use 'standard' for the default colour style of the clustering tool! [Default: standard]
 
-__-c1, --clusters1__ &emsp; Number of Clusters in the first cluster analysis. This is important to correctly distinguish between mutations of interest (MOIs) and background noise [Default: 3]")
+__-c1, --clusters1__ &emsp; Number of Clusters in the first cluster analysis. This is important to correctly distinguish between mutations of interest (MOIs) and background noise [Default: 3]
 
 __-c1mth, --c1method__ &emsp; Method used for the first cluster analysis, available options are: single, complete, average, weighted, centroid, median, and ward. If you want to use multiple methods, separate them by a ',', e.g. 'complete,average'. ATTENTION: Only the last metric/method combination will be used as starting point for the second cluster analysis step! ATTENTION: Methods centroid, median, and ward are correctly defined only for Euclidean distance and hence, no other metric will be accepted in these cases! [Default: ward]
 
@@ -56,7 +61,3 @@ __-t, --transformation__ &emsp; Data transformation of relative mutation counts 
 __-u, --usher__ &emsp; Use UShER mode instead of default pangoLEARN when assigning clusters with pangolin. ATTENTION: This option is only needed when --assignment is set to 'pangolin'!
 
 __-v, --version__ &emsp; Show program's version number and exit.
-
-
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SebH87&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
