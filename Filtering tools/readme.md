@@ -15,11 +15,11 @@ or
 
 _python DeViVa_FilterPro.py -d \<data file\> -m \<metadata file\>_
 
-You can add additional arguments if needed, but -d is always needed!
+When using the advanced version (DeViVa_FilterPro.py), you can add additional arguments if needed, but -d and -m are always needed!
 
 __DEPENDENCIES:__
 
-DeViVa needs some additional Python packages to be installed. You can install them manually or use the DeViVa.install file when working on Linux. Here is a full list of all required Python packages:
+The DeViVa filtering tools need some additional Python packages to be installed by the user. Here is a full list of all required Python packages:
 
 * Bio
 
