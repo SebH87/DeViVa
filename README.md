@@ -8,7 +8,7 @@ __USAGE:__
 
 DeViVa is a Python script that can be run on any operating system. Please ensure that you are using Python 3.x! To start a DeViVa analysis, go to a terminal and type in:
 
-_python DeViVa.py -d_
+_python DeViVa.py -d \<data file\>_
 
 You can add additional arguments if needed, but -d is always needed!
 
