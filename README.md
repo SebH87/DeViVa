@@ -6,7 +6,7 @@ Deconvolution of Virus Variants
 
 DeViVa is a tool designed for the _de-novo_ detection of novel emerging virus variants (e.g., SARS-CoV-2). Associated mutations are conflated by their corresponding frequency pattern. With DeViVa, it is possible to designate different mutation constellations based on their observed frequencies across different samples in time and space by a hierarchical, unsupervised two-step clustering approach. The produced constellations of correlated mutations can then be characterised by either incorporating them into the SARS-CoV-2 reference genome with subsequent variant typing using the pangolin software (https://cov-lineages.org/resources/pangolin.html), or by assigning them to a specific reference database for virus variants.
 
-DeViVa was originally designed for data from an amplicon-based sequencing approach relying on a modified version of the ARTIC primer set and amplicons of around 400 bases, but can easily be used also for other sequencing data. However, data need to be formatted in the right way (more information will follow soon)!
+DeViVa was originally designed for data from an amplicon-based sequencing approach relying on a modified version of the ARTIC primer set and amplicons of around 400 bases, but can easily be used also for other sequencing data. However, data need to be formatted in the right way! For more information on the required input data format, please visit the VaQuERo GitHub page (https://github.com/fabou-uobaf/VaQuERo).
 
 ## USAGE:
 
